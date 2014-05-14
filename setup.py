@@ -19,6 +19,8 @@ def get_version():
 
 setup(
     name='RasmusMediaWeb',
+    description="A web-based media manager",
+    long_description=open('README.rst').read().strip(),
     version=get_version(),
     packages=find_packages(),
     install_requires=[
