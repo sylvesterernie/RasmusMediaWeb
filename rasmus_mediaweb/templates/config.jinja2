@@ -1,0 +1,27 @@
+<script
+    src="{{ 'rasmus_mediaweb:static/libs/requirejs-2.1.11/require.js'|static_url }}"></script>
+<script>
+  var debug_javascript = {{ request.registry.settings['rasmus.debug.javascript']|lower }};
+  var suffix = '.min';
+  if (debug_javascript)
+      suffix = '';
+  require_config = {
+      baseUrl: "{{ 'rasmus_mediaweb:static/'|static_url }}",
+      paths: {
+          jquery: 'libs/jquery-2.1.1/jquery' + suffix,
+          bootstrap: 'libs/bootstrap-3.1.1/js/bootstrap' + suffix,
+          knockout: 'libs/knockout-3.1.0/knockout' + suffix,
+          jqtree: 'libs/jqTree-0.20/js/tree.jquery' + suffix,
+          rasmusmediaweb: 'js'
+      },
+      shim: {
+          jqtree: {
+              deps: ['jquery']
+          },
+          bootstrap: {
+              deps: ['jquery']
+          }
+      }
+  };
+  require.config(require_config);
+</script>

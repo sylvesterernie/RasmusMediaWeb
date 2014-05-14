@@ -1,0 +1,78 @@
+{% extends "layout.jinja2" %}
+
+{% block head_footer %}
+  <link
+      href="{{ 'rasmus_mediaweb:static/libs/jqTree-0.20/css/jqtree.css'|static_url }}"
+      rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+  <h1>Media</h1>
+
+  <div id="media-listing" class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="folder-tree">
+          <h3>Folders</h3>
+
+          <div id="folder-tree"></div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="item-listing">
+          <h3>Items</h3>
+          <dl>
+            <dt><span class="glyphicon glyphicon-folder-open"></span></dt>
+            <dd data-bind="text: folder_path"></dd>
+          </dl>
+          <table class="table table-striped table-condensed">
+            <thead>
+            <tr>
+              <th class="icon"></th>
+              <th class="name">Name</th>
+              <th class="media-info">Media Info</th>
+              <th class="size">Size</th>
+              <th class="actions"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- ko foreach: media_items -->
+            <tr>
+              <td><span
+                  data-bind="css: 'glyphicon glyphicon-' + icon, attr: {title: type}"></span>
+              </td>
+              <td data-bind="text: name"></td>
+              <td>
+                <!-- ko if: media_info.episodeNumber -->
+                <span data-bind="text: media_info.season"></span>x<span
+                  data-bind="text: media_info.episodeNumber"></span> -
+                <!-- /ko -->
+                <span
+                    data-bind="text: media_info.title, attr: { title: name }"></span>
+              </td>
+              <td data-bind="text: formatted_size"></td>
+              <td>
+                <div data-bind="foreach: actions" class="btn-group">
+                  <a class="btn btn-default btn-xs"
+                     data-bind="attr: {href: href, title: title}">
+                    <span data-bind="css: 'glyphicon glyphicon-'+icon()"></span>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <!-- /ko -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body_footer %}
+  <script>
+    require(['rasmusmediaweb/pages/media'], function (media) {
+      media.init();
+    });
+  </script>
+{% endblock %}

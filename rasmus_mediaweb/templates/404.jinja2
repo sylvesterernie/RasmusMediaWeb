@@ -1,0 +1,7 @@
+{% extends "layout.jinja2" %}
+{% block main %}
+  <h1>{{ request.response.status }} ({{ request.path }})</h1>
+  <h2>Oops!</h2>
+  <p>It's looking like you may have taken a wrong turn . Don't worry... it
+    happens to the best of us.</p>
+{% endblock %}

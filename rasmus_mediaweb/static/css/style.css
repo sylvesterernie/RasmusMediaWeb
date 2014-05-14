@@ -1,0 +1,130 @@
+.main {
+    padding-top: 50px;
+}
+
+/* transmission */
+
+.sort-fields {
+    background-color: #101010;
+}
+
+.sort-fields a {
+    color: #eee;
+    display: inline-block;
+    width: 100%;
+}
+
+.sort-fields a:hover {
+    text-decoration: none;
+}
+
+.sort-fields th.active {
+    background-color: #444 !important;
+}
+
+.sort-fields th:first-child {
+    width: 60%;
+}
+
+.sort-fields th:last-child {
+    width: 6em;
+}
+
+.global-speeds {
+    color: #999;
+}
+
+.global-loading {
+    height: 64px;
+    text-align: center;
+    text-indent: -1000em;
+    background: url(../img/loader-64x64.gif) no-repeat center;
+    margin: 2em 0;
+}
+
+.global-actions {
+    padding-bottom: 0.5em;
+    float: right;
+}
+
+.media-item-listing th:first-child {
+    width: 40px;
+}
+
+#folder-tree a.jqtree-toggler.jqtree-closed {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url('../img/folder-close-16x16.png') no-repeat 0 -3px;
+    text-indent: -1000em;
+}
+
+#folder-tree a.jqtree-toggler {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url('../img/folder-open-16x16.png') no-repeat 0 -3px;
+    text-indent: -1000em;
+}
+
+#folder-tree li > .jqtree-element {
+    padding-left: 0.5em;
+}
+
+#folder-tree li.jqtree-selected > .jqtree-element {
+    background: #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#media-listing h3 {
+    margin: 0;
+}
+
+#media-listing .item-listing {
+    border: 1px solid #999;
+    padding: 1em;
+    overflow: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#media-listing .folder-tree {
+    border: 1px solid #999;
+    padding: 1em;
+    overflow: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+#media-listing table th {
+    background-color: white;
+}
+
+#media-listing h3 {
+    display: none;
+}
+
+#media-listing dt, dd {
+    display: inline-block;
+}
+
+#media-listing dd {
+    padding-left: 0.5em;
+    font-weight: bold;
+}
+
+.item-listing th.icon {
+    width: 1px;
+}
+
+.item-listing th.actions {
+    width: 5em;
+}
+
+.item-listing th.size {
+    width: 1px;
+}
